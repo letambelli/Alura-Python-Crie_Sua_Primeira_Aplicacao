@@ -2,6 +2,15 @@ import os
 
 restaurantes = ['Pizza', 'Sushi']
 
+def voltar_ao_menu_principal():
+      input('Aperte uma tecla para voltar ao menu principal.')
+      main()
+
+def exibir_subtitulo(texto):
+      os.system('cls')
+      print(texto)
+      print()
+
 def exibir_o_nome_do_programa():
       print("""
 ╭━━━╮╱╱╭╮╱╱╱╱╱╱╱╭━━━╮
@@ -25,25 +34,20 @@ def finalizar_app():
 
 def opcao_invalida():
       print('Opção inválida!\n')
-      input('Aperte uma tecla para voltar ao menu principal.')
-      main()
+      voltar_ao_menu_principal()
 
 def cadatrar_novo_restaurante():
-      os.system('cls')
-      print('Cadastro de novos restaurantes\n')
+      exibir_subtitulo('Cadastro de novos restaurantes')
       nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
       restaurantes.append(nome_do_restaurante)
-      print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!')
-      input('\nDigite uma tecla para voltar ao menu principal')
-      main()
+      print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!\n')
+      voltar_ao_menu_principal()
 
 def listar_restaurantes():
-      os.system('cls')
-      print('Listando Restaurantesz\n')
+      exibir_subtitulo('Listando Restaurantesz')
       for restaurante in restaurantes:
-            print(f'{restaurante}')
-      input('\nDigite uma tecla para voltar ao menu principal')
-      main()
+            print(f'. {restaurante}')
+      voltar_ao_menu_principal()
 
 def escolher_opcao():
       try:
